@@ -154,7 +154,7 @@ Registration follows a validation → creation → notification pattern with ema
 A: Make sure you're using the `@codebase-analysis` mention at the start of your message
 
 **Q: The references don't match my codebase**
-A: The agent analyzes YOUR actual code - the examples in docs are just illustrations
+A: The agent analyzes your actual code - the examples in docs are just illustrations
 
 **Q: Can it help me fix bugs?**
 A: It can help you understand HOW code works, which aids in debugging, but it's not designed to write fixes
@@ -169,3 +169,4 @@ A: The agent provides comprehensive analysis with precise references. Ask follow
 - Review the [agent configuration](.github/agents/codebase-analysis.yml)
 
 Happy analyzing! 🔍
+
