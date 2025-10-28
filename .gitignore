@@ -1,0 +1,31 @@
+# Editor and IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Build artifacts
+dist/
+build/
+*.pyc
+__pycache__/
+
+# Dependencies (if any are added in the future)
+node_modules/
+venv/
+.env
+
+# Log files
+*.log
+logs/
+
+# Test coverage
+coverage/
+.coverage
