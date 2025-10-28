@@ -44,6 +44,48 @@ Invoke the agent in GitHub Copilot by mentioning it in your chat:
 
 ---
 
+### 📁 Code Finder Agent
+
+**Agent Name:** `code-finder`
+
+**Purpose:** A specialist at finding WHERE code lives in a codebase - locates relevant files and organizes them by purpose, without analyzing their contents.
+
+**Use Cases:**
+- Quickly locating files related to a specific feature or topic
+- Understanding project file organization and structure
+- Finding all files of a specific type (tests, configs, docs, types)
+- Discovering where to add new code for a feature
+- Mapping out file clusters and related code locations
+- Getting an inventory of files by category
+
+**How to Use:**
+Invoke the agent in GitHub Copilot by mentioning it in your chat:
+```
+@code-finder Find all files related to authentication
+@code-finder Locate payment processing code
+@code-finder Show me all test files for the API layer
+@code-finder Where should I add new shopping cart code?
+```
+
+**What You'll Get:**
+- Organized file lists by category (implementation, tests, config, docs, types, examples)
+- Full paths from repository root
+- Directory clusters showing related files
+- File organization patterns
+- Recommendations for where to add new files
+
+**Key Features:**
+- ✅ Fast file location using grep, find, and glob patterns
+- ✅ Categorizes files by purpose (implementation, tests, config, docs, types, examples)
+- ✅ Shows directory organization and file clusters
+- ✅ Provides full paths and file counts
+- ✅ Identifies naming patterns and conventions
+- ✅ Notes common locations for different file types
+
+**Configuration:** `.github/agents/code-finder.yml`
+
+---
+
 ## Setup
 
 These custom agents are automatically available when this repository is configured with GitHub Copilot. The agent configurations are stored in the `.github/agents/` directory.

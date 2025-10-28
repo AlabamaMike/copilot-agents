@@ -1,20 +1,36 @@
-# Quick Start Guide: Codebase Analysis Agent
+# Quick Start Guide: Custom Agents
 
-Get started with the `@codebase-analysis` agent in 5 minutes!
+Get started with custom agents in GitHub Copilot in 5 minutes!
 
-## What is the Codebase Analysis Agent?
+## Available Agents
 
-The codebase-analysis agent is your expert assistant for understanding HOW code works. It specializes in:
+### 🔍 Codebase Analysis Agent (`@codebase-analysis`)
+
+Your expert assistant for understanding HOW code works. It specializes in:
 - 🔍 Analyzing implementation details
 - 📊 Tracing data flow through your application
 - 📝 Providing precise file:line references
 - 🏗️ Explaining architectural patterns and design decisions
 
+### 📁 Code Finder Agent (`@code-finder`)
+
+Your expert assistant for finding WHERE code lives. It specializes in:
+- 🔎 Locating files by feature, topic, or type
+- 📂 Organizing files by purpose (implementation, tests, config, docs, types, examples)
+- 🗂️ Showing directory structure and file clusters
+- 📋 Providing file inventories and organization patterns
+
+---
+
+## Codebase Analysis Agent
+
 ## How to Use
+
+### Codebase Analysis Agent
 
 Simply mention `@codebase-analysis` in your GitHub Copilot chat followed by your question.
 
-### Basic Usage
+#### Basic Usage
 
 ```
 @codebase-analysis How does [feature/function] work?
@@ -142,13 +158,167 @@ Registration follows a validation → creation → notification pattern with ema
 - Includes rate limiting via Express middleware
 ```
 
+---
+
+## Code Finder Agent
+
+### How to Use
+
+Simply mention `@code-finder` in your GitHub Copilot chat followed by your request.
+
+#### Basic Usage
+
+```
+@code-finder Find all files related to [feature/topic]
+```
+
+#### Common Use Cases
+
+##### 1. Find Files by Feature
+```
+@code-finder Find all authentication-related files
+```
+
+##### 2. Locate Specific File Types
+```
+@code-finder Show me all test files for the user module
+```
+
+##### 3. Find Configuration Files
+```
+@code-finder List all configuration files
+```
+
+##### 4. Understand File Organization
+```
+@code-finder How is the payment code organized?
+```
+
+##### 5. Find Where to Add Code
+```
+@code-finder Where should I add new shopping cart features?
+```
+
+#### What to Expect
+
+The agent will provide:
+
+✅ **Organized File Lists**: Files grouped by category
+```
+📦 Implementation Files (8 files)
+🧪 Test Files (3 files)
+⚙️ Configuration Files (2 files)
+📚 Documentation Files (1 file)
+```
+
+✅ **Full Paths**: Complete paths from repository root
+```
+src/auth/authenticate.js
+src/auth/login-handler.js
+tests/auth/auth.test.js
+```
+
+✅ **Directory Clusters**: Shows where related files are grouped
+```
+Clusters:
+- src/auth/ (5 files) - Core authentication logic
+- tests/auth/ (3 files) - Authentication tests
+```
+
+✅ **Organization Patterns**: Explains file structure conventions
+```
+Pattern: Routes in src/api/routes/, controllers in src/api/controllers/
+Convention: Each domain has its own route and controller file
+```
+
+#### Tips for Best Results
+
+##### 1. Use Domain/Feature Names
+❌ "Find files"
+✅ "Find all shopping cart files"
+
+##### 2. Be Specific About Types
+✅ "Find all TypeScript type definitions"
+✅ "Show me all API route files"
+
+##### 3. Ask About Organization
+✅ "How is the notification system organized?"
+✅ "Where are the test files located?"
+
+##### 4. Request Categories
+✅ "Find all configuration files"
+✅ "List all documentation for the API"
+
+#### Example Session
+
+**You:**
+```
+@code-finder Find all authentication files
+```
+
+**Agent:**
+```
+### Search Summary
+Found 23 files across 6 categories related to authentication.
+
+### Files by Category
+
+#### 📦 Implementation Files (12 files)
+src/auth/authenticate.js
+src/auth/login-handler.js
+src/auth/session-manager.js
+...
+
+#### 🧪 Test Files (5 files)
+tests/auth/auth.test.js
+...
+
+#### ⚙️ Configuration Files (3 files)
+config/auth.yml
+...
+
+### Directory Organization
+- Primary location: src/auth/ (8 files)
+- Tests: tests/auth/ (5 files)
+- Config: config/ (3 files)
+
+Recommendation: Add new auth features in src/auth/
+```
+
+---
+
+## Combining Agents
+
+Use agents together for the best workflow:
+
+1. **Find code** with `@code-finder`
+2. **Understand it** with `@codebase-analysis`
+3. **Modify it** with your tools
+
+**Example:**
+```
+@code-finder Find payment processing files
+→ Located: src/payment/payment-processor.js
+
+@codebase-analysis How does src/payment/payment-processor.js work?
+→ Understanding: Uses Stripe API, implements retry logic...
+
+[Make your changes]
+```
+
+---
+
 ## Next Steps
 
 1. **Try it**: Open GitHub Copilot chat and ask a question
-2. **Explore**: Check out [examples/codebase-analysis-examples.md](examples/codebase-analysis-examples.md) for more detailed examples
+2. **Explore**: Check out the examples:
+   - [Codebase Analysis Examples](examples/codebase-analysis-examples.md)
+   - [Code Finder Examples](examples/code-finder-examples.md)
 3. **Learn**: Read the full documentation in [README.md](README.md)
 
 ## Troubleshooting
+
+### Codebase Analysis Agent
 
 **Q: The agent isn't responding to my questions**
 A: Make sure you're using the `@codebase-analysis` mention at the start of your message
@@ -162,11 +332,26 @@ A: It can help you understand HOW code works, which aids in debugging, but it's 
 **Q: How detailed will the analysis be?**
 A: The agent provides comprehensive analysis with precise references. Ask follow-up questions for more depth!
 
+### Code Finder Agent
+
+**Q: Why isn't the agent finding my files?**
+A: Make sure you're using `@code-finder` at the start. Try different search terms or synonyms.
+
+**Q: Can it analyze what the code does?**
+A: No, it only locates files. Use `@codebase-analysis` to understand code functionality.
+
+**Q: How accurate are the file categorizations?**
+A: Very accurate - it uses file patterns, naming conventions, and directory structure to categorize files.
+
 ## Need Help?
 
-- Check the [examples](examples/codebase-analysis-examples.md)
+- Check the examples:
+  - [Codebase Analysis Examples](examples/codebase-analysis-examples.md)
+  - [Code Finder Examples](examples/code-finder-examples.md)
 - Read the [full documentation](README.md)
-- Review the [agent configuration](.github/agents/codebase-analysis.yml)
+- Review the agent configurations:
+  - [Codebase Analysis Config](.github/agents/codebase-analysis.yml)
+  - [Code Finder Config](.github/agents/code-finder.yml)
 
-Happy analyzing! 🔍
+Happy analyzing and finding! 🔍📁
 
