@@ -86,6 +86,50 @@ Invoke the agent in GitHub Copilot by mentioning it in your chat:
 
 ---
 
+### 🔎 Pattern Finder Agent
+
+**Agent Name:** `pattern-finder`
+
+**Purpose:** A specialist at finding code patterns and examples in the codebase - locates similar implementations that can serve as templates or inspiration for new work.
+
+**Use Cases:**
+- Finding similar implementations to use as templates
+- Discovering how specific patterns are implemented
+- Locating usage examples for a particular approach
+- Understanding coding conventions through examples
+- Finding test patterns for similar features
+- Exploring multiple variations of the same pattern
+
+**How to Use:**
+Invoke the agent in GitHub Copilot by mentioning it in your chat:
+```
+@pattern-finder Show me pagination patterns in the codebase
+@pattern-finder Find error handling patterns in API routes
+@pattern-finder How is authentication implemented? Show me examples
+@pattern-finder Find state management patterns in React components
+```
+
+**What You'll Get:**
+- Multiple pattern examples with code snippets
+- File:line references for each pattern
+- Key characteristics of each pattern
+- Testing patterns for the implementation
+- Information about where patterns are used
+- Related utilities and helper files
+
+**Key Features:**
+- ✅ Shows existing patterns without judgment or critique
+- ✅ Provides multiple variations of the same pattern
+- ✅ Includes complete code examples with context
+- ✅ Documents test patterns alongside implementation patterns
+- ✅ Notes where each pattern is used in the codebase
+- ✅ Focuses on "what exists" rather than "what should be"
+- ✅ Catalogs patterns like a reference library
+
+**Configuration:** `.github/agents/pattern-finder.yml`
+
+---
+
 ## Setup
 
 These custom agents are automatically available when this repository is configured with GitHub Copilot. The agent configurations are stored in the `.github/agents/` directory.
