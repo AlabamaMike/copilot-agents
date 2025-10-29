@@ -130,6 +130,32 @@ Invoke the agent in GitHub Copilot by mentioning it in your chat:
 
 ---
 
+## Superpowers Integration
+
+This repository includes the [Superpowers](https://github.com/obra/superpowers) system integration, which provides additional skills and capabilities for AI coding agents. The superpowers system is located in `.codex/superpowers/` and includes skills for:
+
+- Test-driven development
+- Systematic debugging
+- Code review workflows
+- Plan writing and execution
+- Root cause tracing
+- Git worktree management
+- And many more...
+
+### Using Superpowers
+
+The superpowers system is configured in `.codex/AGENTS.md` and can be activated by running:
+
+```bash
+.codex/superpowers/.codex/superpowers-codex bootstrap
+```
+
+You can also add your own custom skills to `.codex/skills/`.
+
+For more information, see the [Superpowers documentation](.codex/superpowers/README.md).
+
+---
+
 ## Setup
 
 These custom agents are automatically available when this repository is configured with GitHub Copilot. The agent configurations are stored in the `.github/agents/` directory.
